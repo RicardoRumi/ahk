@@ -15,7 +15,7 @@ CheckForWake:
     global StartTime
     Elapsed := A_TickCount - LastCheck
     LastCheck := A_TickCount ; Update LastCheck to the current time
-    if (Elapsed > 30000) { ; More than 1 second has elapsed, indicating a wake-up
+    if (Elapsed > 30000 || Elapsed < 0) { ; More than 1 second has elapsed, indicating a wake-up
         PerformWakeRoutine()
     }
 return
